@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAV BAR PRACTICE</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white">
+
+    <nav class="bg-gray-800">
+        <div class="flex items-center justify-between p-6 px-5 lg:px-20 sm:px-10">
+            <!-- Logo -->
+            <div class="logo">
+                <h1 class="text-2xl font-bold">Abde.</h1>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden sm:flex gap-6 text-lg capitalize">
+                <li><a href="#" class="hover:text-gray-400 transition duration-300">Home</a></li>
+                <li><a href="#" class="hover:text-gray-400 transition duration-300">About</a></li>
+                <li><a href="#" class="hover:text-gray-400 transition duration-300">Services</a></li>
+                <li><a href="#" class="hover:text-gray-400 transition duration-300">Blog</a></li>
+                <li><a href="#" class="hover:text-gray-400 transition duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Icon -->
+            <div class="sm:hidden cursor-pointer" id="menuBtn">
+                <i onclick="openNav()" class="ri-menu-3-line text-2xl" id="menuIcon"></i>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="sm:hidden hidden px-5 pb-4 transition-all duration-300 ease-in-out">
+            <ul class="flex flex-col gap-4 text-lg capitalize bg-gray-700 p-5 rounded">
+                <li><a href="#" class="hover:text-gray-300 transition">Home</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition">About</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition">Services</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition">Blog</a></li>
+                <li><a href="#" class="hover:text-gray-300 transition">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<script>
+  let isOpen = false;
+
+  function openNav() {
+    const menu = document.getElementById('mobileMenu');
+    const icon = document.getElementById('menuIcon');
+
+    if (isOpen == false) {
+      // Show menu
+      menu.classList.remove('hidden');
+      icon.classList.remove('ri-menu-3-line');
+      icon.classList.add('ri-close-line');
+      isOpen = true;
+    } else {
+      // Hide menu
+      menu.classList.add('hidden');
+      icon.classList.remove('ri-close-line');
+      icon.classList.add('ri-menu-3-line');
+      isOpen = false;
+    }
+  }
+</script>
+
+</body>
+
+</html>
